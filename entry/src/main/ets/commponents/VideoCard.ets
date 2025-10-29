@@ -2,20 +2,13 @@ import { IVideoCardDataModules } from "../modules/IVideoCardDataModules"
 
 @ComponentV2
 export struct VideoCard{
-  @Param img:ResourceStr = ''
-  @Param viewCounts:string = ''
-  @Param commentsCounts:string = ''
-  @Param duration:string = ''
-  @Param title:string = ''
-  @Param author:string = ''
-
   @Param videoCardData:IVideoCardDataModules = {
-    img: '',
-    viewCounts: '',
-    commentsCounts: '',
-    duration: '',
-    title: '',
-    author: ''
+    img: "",
+    viewCounts: "",
+    commentsCounts: "",
+    duration: "",
+    title: "",
+    author: ""
   }
   build() {
     //卡片最外层
@@ -23,7 +16,7 @@ export struct VideoCard{
 
       //上半部分
       Stack({alignContent:Alignment.Bottom}){
-        Image(this.img)
+        Image(this.videoCardData.img)
           .width(300)
           .borderRadius({topLeft:8,topRight:8})
         Row(){
@@ -31,18 +24,18 @@ export struct VideoCard{
             .width(25)
             .fillColor(Color.White)
             .margin({right:5})
-          Text(this.viewCounts)
+          Text(this.videoCardData.viewCounts)
             .fontWeight(700)
             .fontColor(Color.White)
             .margin({right:15})
           Image($rawfile('danMuLiang.svg'))
             .width(25)
             .margin({right:5})
-          Text(this.commentsCounts)
+          Text(this.videoCardData.commentsCounts)
             .fontWeight(700)
             .fontColor(Color.White)
           Blank()//填充空余空间
-          Text(this.duration)
+          Text(this.videoCardData.duration)
             .fontWeight(700)
             .fontColor(Color.White)
         }
@@ -53,7 +46,7 @@ export struct VideoCard{
 
       //下半部分
       Column({space:15}){
-        Text(this.title)
+        Text(this.videoCardData.title)
           .width('100%')
           .maxLines(2)
           .textOverflow({overflow:TextOverflow.Ellipsis})
@@ -67,7 +60,7 @@ export struct VideoCard{
           Text('已关注')
             .fontSize(16)
             .fontColor('#fff45906')
-          Text(this.author)
+          Text(this.videoCardData.author)
             .fontSize(16)
             .fontColor(Color.Gray)
           Blank()//填充空余空间

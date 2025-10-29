@@ -1,25 +1,25 @@
 import { VideoCard } from '../commponents/VideoCard'
+import { videoCardDataList } from '../data/VideoCardDataList'
+import { IVideoCardDataModules } from '../modules/IVideoCardDataModules'
 
 @Entry
 @ComponentV2
 struct Index {
+  @Local dataList:IVideoCardDataModules[] = videoCardDataList
   build() {
-    Column(){
+    List({space:20}){
 
-
-      VideoCard({
-        img:$rawfile('fengMian.png'),
-        viewCounts:'513.3万',
-        commentsCounts:'1.1万',
-        duration:'11:33',
-        title:'特警vs100人“诈骗集团”，谁能获胜？影视飓风躲猫猫特别篇',
-        author:'飓多多StormCrew'
+      ForEach(this.dataList,(item:IVideoCardDataModules)=>{
+        ListItem(){
+          VideoCard({
+            videoCardData:item
+          })
+        }
       })
 
-
     }
+    .alignListItem(ListItemAlign.Center)
     .width('100%')
     .height('100%')
-    .justifyContent(FlexAlign.Center)
   }
 }

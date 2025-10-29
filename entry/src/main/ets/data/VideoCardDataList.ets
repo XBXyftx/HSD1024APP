@@ -3,8 +3,8 @@ import { IVideoCardDataModules } from "../modules/IVideoCardDataModules";
 export let videoCardDataList:IVideoCardDataModules[] = [
   {
     img: 'https://i1.hdslb.com/bfs/archive/97b197ce785ac84bf160d7583875b0f8fe1753cc.jpg',
-    viewCounts: '',
-    commentsCounts: '',
+    viewCounts: '21',
+    commentsCounts: '3132',
     duration: '28:25',
     title: '去了一趟挪威。',
     author: '影视飓风'

@@ -3,7 +3,7 @@
 struct Index2 {
   build() {
     //根组件
-    Column(){
+    Column({space:20}){
 
       //卡片最外层
       Column(){
