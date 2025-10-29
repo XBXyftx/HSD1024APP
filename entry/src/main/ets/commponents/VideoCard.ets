@@ -1,3 +1,5 @@
+import { IVideoCardDataModules } from "../modules/IVideoCardDataModules"
+
 @ComponentV2
 export struct VideoCard{
   @Param img:ResourceStr = ''
@@ -6,6 +8,15 @@ export struct VideoCard{
   @Param duration:string = ''
   @Param title:string = ''
   @Param author:string = ''
+
+  @Param videoCardData:IVideoCardDataModules = {
+    img: '',
+    viewCounts: '',
+    commentsCounts: '',
+    duration: '',
+    title: '',
+    author: ''
+  }
   build() {
     //卡片最外层
     Column(){

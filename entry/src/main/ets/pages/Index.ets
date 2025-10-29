@@ -1,4 +1,4 @@
-import { VideoCard } from '../commponents/VidoCard'
+import { VideoCard } from '../commponents/VideoCard'
 
 @Entry
 @ComponentV2
